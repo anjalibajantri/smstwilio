@@ -1,0 +1,71 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8"/>
+      <link rel="stylesheet" type="text/css" href="style/style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+  <script>
+    $(function() {
+        $("#header").load("html/header.html");
+        $("#footer").load("html/footer.html");
+    });
+    </script>
+  </head>
+  
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div id="header"></div>
+      <div id="section1" class="container-fluid">
+        <div class="container-fluid">
+          <div class="row" width = "100%" height = "100%" >
+            <div class="col-sm-6" style="background-color: white; width : 65% ; float: left; min-height:95vh;">
+                <h1 for= "header01" style= "color:Black; font-size : 50px ; text-align :left; width :843px ; height : 282px; padding-top:15% ; font-size: 52px; font-family: Rage, Italic; padding-left:15% ;">We are Blah blah blah blah  </h1>
+              <tr>
+                <td id = "col1" class = "col">
+                  <img src="media/logo.png" style="max-height: 344px; max-width: 259px; ">  
+                <td>
+                <td id = "col2" class = "col">
+                    <img src="media/logo.png" style="max-height:344px; max-width: 259px;  ">  
+                <td> 
+                <td id = "col3" class = "col">
+                    <img src="media/logo.png" style="max-height:344px;  max-width: 259px;   ">  
+                <td> 
+              </tr>      
+                <button id="btn_join" style="max-height: 55px;  max-width:419px; background-color: #96858F; border-color:#707070; border : 1px solid; font-size: 30px; font-family : Roboto, Medium;
+                 padding: 5px 28px 28px 32px; text-align: center; text-decoration: none;  " >Join</button>
+            </div>
+            <div class= "col-sm-6" style= "background-color:white;  width : 30%; min-height:95vh; padding-top:10%; ">
+                <label for= "uname" style= "color:Black; padding-left:5%;"><h1>Already a Member </h1></label>                            
+                    <div class="container" >
+                      <label for="Username" style="color:white;"><b>Username </b></label>
+                      <br>
+                      <input type="text" style="width: 471px; height : 59px; padding : 56px56px56px56px; color:#6D7993;" placeholder="Enter Username" name="username" id="username" required>
+                        <br>
+                      <label for="password" style="color:white;"><b>Password </b></label>
+                      <br>
+                      <input type="password" style="width: 471px; height : 59px; padding : 56px56px56px56px; color:#6D7993;" placeholder="Enter Password" name="password" id="password" required>
+                      <br>  
+                     
+                      <button id="login_btn" style="max-height: 55px;  max-width:419px; margin-left : 65px ; background-color: #96858F; border-color:#707070; border : 1px solid; font-size: 30px; font-family : Roboto, Medium;
+                      padding: 5px 28px 28px 32px; text-align: center; text-decoration: none;">Login</button> 
+                      <br><br>
+                       
+                      <button id="logout_btn" style="max-height: 55px;  max-width:419px; margin-left : 65px ; background-color: #96858F; border-color:#707070; border : 1px solid; font-size: 30px; font-family : Roboto, Medium;
+                      padding: 5px 28px 28px 32px; text-align: center; text-decoration: none;  ">Logout</button>
+                     
+                      <br>
+                      <label style="color:black;">
+                        <input type = "checkbox" checked = "checked" name = "remember" > Remember me
+                      </label>
+                      </div>
+                      <script src="script/login.js"></script>
+                    
+            </div>
+          </div>
+        </div>
+        <div id="footer"></div>
+    </div>
+  </body>
+</html>
