@@ -1,0 +1,77 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script>
+    $(function() {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+    });
+    </script>
+  </head>
+  
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div id="header"></div>
+    <div class="container-fluid" style="padding-top:10%;">
+
+            <div class="row" ng-app="">
+              <div class="col-sm-7" >
+                    <center>
+                    <h3 style = "font-size: 47px; color :#6D7993;  font-family: Roboto, Medium ;">Filter Options</h3>
+                    <br>
+                    <form action="/action_page.php">
+                        <input  type="checkbox"  style="zoom:1.5;"  name="option1" value = "option1" > 
+                        <label  id = "label1" style = "font-size: 32px; margin-left : 5px; color :#6D7993;  font-family: Roboto, Medium ;" >Option 1</label><br>
+                        <input   type="checkbox" name="option2" >
+                        <label id = "label2" style = "font-size: 32px; margin-left : 5px; color :#6D7993;  font-family: Roboto, Medium ;" > Option 2 </label><br>
+                        <input   type="checkbox" name="option3"  checked> 
+                        <label id = "label3" style = "font-size: 32px; margin-left : 5px; color :#6D7993;  font-family: Roboto, Medium ;" >Option 3 </label><br><br>
+                        <input   style = "background-color: #6D7993;  border: none; color: white; padding: 5px 12px;  margin-top : 5px; border-radius : 25px; text-align: center; text-decoration: none; display: inline-block;font-size: 16px;" type="submit" value="Submit">
+                      </form></center>
+                      <br>
+                      <p  style = "font-size: 32px; margin-left : 75px; color :#6D7993;  font-family: Roboto, Medium ;" class = "para">Number of Customers Selected: xxxx </p>
+              </div>
+              <div class="col-sm-5">
+                  <center><h3 style = "font-size: 47px; color :#6D7993;  font-family: Roboto, Medium ;">Submit Request</h3></center>
+                <div>
+                   <p class = "para" style = "font-size: 30px; color :#6D7993;  font-family: Roboto, Medium ;">Message Type: </p>
+                   <br>
+                   <p class = "para" style = "font-size: 30px; color :#6D7993;  font-family: Roboto, Medium ;">Message Cost: </p>
+                   <br>
+                   <p class = "para" style = "font-size: 30px; color :#6D7993;  font-family: Roboto, Medium ;">Message Promotion Cost: </p>
+                   <br>
+
+                <table>
+                  <tr>
+                    <td><span width = "50%" class = "para"  style = "font-size: 30px; color :#6D7993;  font-family: Roboto, Medium ;">Sending Time Window: </span></td>
+                    <td><input class = "mytime" style = "border-radius: 20px;  width :  295px;  height :30px; padding-left : 5px; margin-bottom : 25px;" type="text"></td>
+                  </tr> 
+                
+                  <tr>
+                      <td><span   width = "50%" class = "para"  style = "font-size: 30px; color :#6D7993;  font-family: Roboto, Medium ;">Sending Date:</span></td>
+                      <td><input class = "mydate"  style = "border-radius: 20px; width :  295px;  height :30px; padding-left : 5px; margin-bottom : 25px;" type="date"></td>
+                  </tr>
+                </table>
+      
+                </div>
+                <button id = "submit_request"  style = "background-color: #6D7993;  width : 265px; height :  40px; border: none; color: white; padding: 5px 12px;  margin-top : 10px; border-radius : 25px; text-align: center; text-decoration: none; display: inline-block;font-size: 16px;">Submit a Request</button>
+                <script>
+                const submit_request = document.getElementById('submit_request');
+                submit_request.addEventListener('click', e => {
+                    window.location.href = "/twilio/html/on_request_success.html";
+                }); 
+                </script>
+              </div>
+            </div>
+          </div>
+
+    <div id="footer"></div>
+    
+  </body>
+</html>
