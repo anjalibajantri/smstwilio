@@ -1,0 +1,88 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+   <script>
+    $(function() {
+        $("#header").load("logged_in_header.html");
+        $("#footer").load("footer.html");
+    });
+    </script>
+  </head>
+  
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div id="header"></div>
+    <div class="container-fluid" style="width : 100% ; height : 100%; float: left; padding-top:5%;">
+
+            <div class="row" ng-app=""  >
+              <div class="col-sm-7" >
+                    <center><h1>Create Your Promotional Message</h1>
+                    <h3>Message Body</h3>
+                    <br>
+                    <textarea rows="5" ng-model="message_body" style="width: 714px; height :241px ; border: 2px solid black; border-radius: 30px; "></textarea>
+                    <br>
+                <div class="container-fluid" >
+                  <div class="row" >
+                   
+                      <div class="col-sm-6"  style="width : 50% ; height : 100%; margin-top: 10px;">
+                        Link (Optional): <input type="url" style= "border: 2px solid black; border-radius: 14px; padding-top: 5px;  padding-bottom: 5px;" ng-model="link">
+                          <br>
+                          <input type="file" style= "border: 2px solid black; width : 300px ; height : 35px; padding-top: 0px ; padding-bottom : 2px; padding-right : 3px ; padding-left: 3px ; border-radius: 14px;   margin-top:8px; margin-bottom : 4px;" >
+                          <br>
+                          <input type="file" style= "border: 2px solid black; width : 300px ; height : 35px; padding-top: 0px ; padding-bottom : 3px; padding-right : 3px ; padding-left: 3px ; border-radius: 14px;   margin-top:5px">
+                          <br>
+                          <input type="file" style= "border: 2px solid black;  width : 300px ; height : 35px; padding-top: 0px ; padding-bottom : 3px; padding-right : 3px ; padding-left: 3px ; border-radius: 14px;   margin-top:5px">
+                          <br>
+                          <input type="file" style= "border: 2px solid black; width : 300px ; height : 35px; padding-top: 0px ; padding-bottom : 3px; padding-right : 3px ; padding-left: 3px ; border-radius: 14px;    margin-top:5px">
+                      </div>
+                  
+                      <div class="col-sm-6" style="width : 50% ; margin-top: 6px;">
+                          Expiry Date (Optional): <input type="date" style= "border: 2px solid black; border-radius: 14px;  padding-top: 5px; padding-bottom: 5px; margin-top:5px" ng-model="expiry">
+                          <br>
+                            <input type="file" style= "border: 2px solid black; width : 300px ; height : 35px; padding-top: 0px ; padding-bottom : 3px; padding-right : 3px ; padding-left: 3px ;  border-radius: 14px;  margin-top:8px">
+                          <br>
+                            <input type="file" style= "border: 2px solid black;  width : 300px ; height : 35px; padding-top: 0px ; padding-bottom : 3px; padding-right : 3px ; padding-left: 3px ;  border-radius: 14px;  margin-top:5px">
+                          <br>
+                            <input type="file" style= "border: 2px solid black; width : 300px ; height : 35px; padding-top: 0px ; padding-bottom : 3px; padding-right : 3px ; padding-left: 3px ; border-radius: 14px;  margin-top:5px">
+                          <br>
+                            <input type="file" style= "border: 2px solid black; width : 300px ; height : 35px; padding-top: 0px ; padding-bottom : 3px; padding-right : 3px ; padding-left: 3px ;  border-radius: 14px;  margin-top:5px">
+                      </div>
+                        </div>
+                      </div>
+                    </center>
+
+              </div>
+              <div class="col-sm-5">
+                  <center><h3>Message Preview</h3></center>
+                <div >
+                        <h3>{{message_body}}</h3>
+                        <h3>{{link}}</h3>
+                        <h3>{{expiry | date:'MM/dd/yyyy'}}</h3>
+                        
+                </div>
+                Test Number: <input type="number" style= "border: 2px solid black; border-radius: 14px;  padding-left:5px; padding-right:5px; padding-top: 5px; padding-bottom: 5px; margin-top:5px">
+                <button style= "width : 115px ; border: 2px solid black; border-radius: 14px;  padding-left:5px; padding-right:5px; padding-top: 5px; padding-bottom: 5px; margin-top:5px">Send</button>
+                <br>
+                <center>
+                <button id="request_service" style= "border: 2px solid black; border-radius: 14px;  padding-left:5px; padding-right:5px; padding-top: 5px; padding-bottom: 5px; margin-top:5px">Submit a Request</button>
+                </center>
+                <script>
+                const submit_request = document.getElementById('request_service');
+                submit_request.addEventListener('click', e => {
+                    window.location.href = "/twilio/html/submit_request.html";
+                }); 
+                </script>
+              </div>
+            </div>
+    </div>
+
+    <div id="footer"></div>
+    
+  </body>
+</html>
